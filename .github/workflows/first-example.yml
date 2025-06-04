@@ -13,7 +13,8 @@ jobs:
         - name: Move files from root folder to runner
           run: |
             mkdir -p /home/runner/work/my-repo/my-repo
-            mv * /home/runner/work/my-repo/my-repo/
+            shopt -s dotglob
+            mv -- !(.github) /home/runner/work/my-repo/my-repo/ || true
         - name: List files
           run: ls -la /home/runner/work/my-repo/my-repo/
         - name: Read file content
