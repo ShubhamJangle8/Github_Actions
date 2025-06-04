@@ -10,7 +10,12 @@ jobs:
         steps:
         - name: Print Hello World
           run: echo "Hello, World!"
+        - name: Move files from root folder to runner
+          run: |
+            mkdir -p /home/runner/work/my-repo/my-repo
+            mv * /home/runner/work/my-repo/my-repo/
         - name: List files
-          run: ls -la
+          run: ls -la /home/runner/work/my-repo/my-repo/
         - name: Read file content
           run: cat README.md
+
