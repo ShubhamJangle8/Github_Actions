@@ -10,11 +10,8 @@ jobs:
         steps:
         - name: Print Hello World
           run: echo "Hello, World!"
-        - name: Move files from root folder to runner
-          run: |
-            mkdir -p /home/runner/work/my-repo/my-repo
-            shopt -s dotglob
-            mv -- !(.github) /home/runner/work/my-repo/my-repo/ || true
+        - name: Checkout Code
+          uses: actions/checkout@v2
         - name: List files
           run: ls -la /home/runner/work/my-repo/my-repo/
         - name: Read file content
