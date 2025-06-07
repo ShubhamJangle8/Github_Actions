@@ -13,7 +13,7 @@ jobs:
         - name: Checkout Code
           uses: actions/checkout@v2
         - name: List files
-          run: ls -la /home/runner/work/my-repo/my-repo/
+          run: ls -la 
         - name: Read file content
           run: cat README.md
 
